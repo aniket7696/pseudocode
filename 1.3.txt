@@ -1,0 +1,64 @@
+/*
+--------------------------------------------------------------------
+* FILE			 : 	Lab_1.1.txt
+* Author		 :	Aniket Shrirang
+* Desc			 :	Program to print Electricity Bill
+* Version		 :	1.0.0
+* Last Modified Date	 :	02-Nov-2018
+* Change Description	 :	Main
+---------------------------------------------------------------------
+*/
+BEGIN
+	DECLARE  fib1, fib2, fib3, limit, ctr;
+	INITIALIZE fib1=0, fib2=1
+	INITIALIZE ctr=2
+	PROMPT "Enter limit of fabonacci series:-" AND STORE IN limit  
+	validation(limit)
+	fabonacci(fib1 , fib2 , fib3, limit, ctr)
+
+END
+
+/*********************************************************************
+* Module Name         : fabonacci(fib1 , fib2 = 1, fib3, limit, ctr)
+* Input Parameters    : number
+* Return Type         : character
+* Author              : Aniket Shrirang
+* Creation Date       : 01-Nov-2018
+* Description         : Loop for fibonacci
+ *********************************************************************/
+
+SUB	fabonacci(fib1 , fib2 = 1, fib3, limit, ctr)
+		while (ctr < limit)
+		{
+		fib3 = fib1 + fib2
+		ctr++;
+        		PRINT fib3
+        	fib1 = fib2
+        	fib2 = fib3
+		}
+END SUB
+
+/*********************************************************************
+* Module Name         : validation(limit)
+* Input Parameters    : number
+* Return Type         : character
+* Author              : Aniket Shrirang
+* Creation Date       : 02-Nov-2018
+* Description         : Checking for validation
+ *********************************************************************/
+
+SUB	validation(limit)
+	IF limit <= 0
+		PRINT "Enter Valid Number"
+	END IF
+	ELSEIF limit == 1
+		PRINT "fib1"
+	END ELSEIF
+	ELSEIF limit == 2
+		PRINT "fib1 and fib2"
+	END ELSEIF 
+	ELSE limit > 2
+		fabonacci(fib1 , fib2 = 1, fib3, limit, ctr)
+	END ELSE
+		
+END SUB

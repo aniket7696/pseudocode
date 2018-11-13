@@ -1,0 +1,36 @@
+/*
+------------------------------------------------------------------------------------
+* FILE			 : 	Lab_2.2.txt
+* Author		 :	Aniket Shrirang
+* Desc			 :	Program to find the sum of digits in entered number
+* Version		 :	1.0.0
+* Last Modified Date	 :	02-Nov-2018
+* Change Description	 :	Main
+------------------------------------------------------------------------------------
+*/
+
+BEGIN
+	DECLARE num, sum, digit
+	PROMPT " enter the number" AND STORE IN num
+	numSUM(num, sum, digit)
+	PRINT " The sum of the entered number is: ", sum
+END
+
+/*********************************************************************
+* Module Name         : calcDecimal(num, decimalDigit, base, rem)
+* Input Parameters    : number
+* Return Type         : character
+* Author              : Aniket Shrirang
+* Creation Date       : 02-Nov-2018
+* Description         : Loop to find sum of entered number
+ *********************************************************************/
+
+SUB	numSUM(num, sum, digit)
+	INITIALIZE sum = 0
+	WHILE (num!=0)
+	digit = num%10
+	sum = sum + digit
+	num = num/10
+	END WHILE
+END SUB
+	

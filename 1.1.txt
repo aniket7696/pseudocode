@@ -1,0 +1,99 @@
+/*
+--------------------------------------------------------------------
+* FILE			 : 	Lab_1.1.txt
+* Author		 :	Aniket Shrirang
+* Desc			 :	Program to print Electricity Bill
+* Version		 :	1.0.0
+* Last Modified Date	 :	02-Nov-2018
+* Change Description	 :	No Description
+---------------------------------------------------------------------
+*/
+
+BEGIN
+
+	DECLARE userId , lastMeterReading , currentMeterReading , unitsConsumed , netAmount , fixedCharge AS INTEGER
+	DECLARE userName AS STRING
+	INITIALIZE fixedCharge TO 100
+
+	enterData()
+
+	calcUnit(lastMeterReading , currentMeterReading)
+	
+	calcNetAmount(unitsConsumed)
+	
+	displayBill(userId , userName , unitsConsumed , netAmount)
+	
+END
+
+/*
+--------------------------------------------------------------------
+* Module Name 			 : 	enterData()
+* Input Parameters		 :	No Parameters
+* Return Type			 :	VOID
+* Author			 :	Aniket Shrirang
+* Creation Date			 :	02-Nov-2018
+* Description	 		 :	To get values
+---------------------------------------------------------------------
+*/
+
+SUB getData()
+
+	PROMPT "User ID" AND STORE IN userId   
+	PROMPT "User Name" AND STORE IN userName 
+	PROMPT "Last month meter reading" AND STORE IN lastMeterReading 
+	PROMPT "Current month meter reading" AND STORE IN currentMeterReading
+
+END SUB
+
+/*
+--------------------------------------------------------------------
+* Module Name 			 : 	displayBill()
+* Input Parameters		 :	userId , userName , unitsConsumed , netAmount
+* Return Type			 :	VOID
+* Author			 :	Aniket Shrirang
+* Creation Date			 :	02-Nov-2018
+* Description	 		 :	To print the calculated values
+---------------------------------------------------------------------
+*/
+
+SUB displayBill(userId , userName , unitsConsumed , netAmount)
+
+	DISPLAY "User ID:" , userId
+	DISPLAY "User Name:" , userName
+	DISPLAY "Unit Consumed:" , unitsConsumed
+	DISPLAY "Net amount:" , netAmount
+
+END SUB
+
+/*
+--------------------------------------------------------------------
+* Module Name 			 : 	calcUnit()
+* Input Parameters		 :	lastMeterReading , currentMeterReading 
+* Return Type			 :	VOID
+* Author			 :	Sarthak Dubey
+* Creation Date			 :	02-Nov-2018
+* Description	 		 :	To Calculate unit consumed
+---------------------------------------------------------------------
+*/
+
+SUB calcUnit(lastMeterReading , currentMeterReading)
+
+	unitsConsumed = lastMeterReading - currentMeterReading
+END SUB
+
+/*
+--------------------------------------------------------------------
+* Module Name 			 : 	calcNetAmount()
+* Input Parameters		 :	unitsConsumed  
+* Return Type			 :	VOID
+* Author			 :	Sarthak Dubey
+* Creation Date			 :	02-Nov-2018
+* Description	 		 :	To Calculate net amounts
+---------------------------------------------------------------------
+*/
+
+SUB calcNetAmount(unitsConsumed)
+
+	netAmount = unitsConsumed * 1.15 + fixedCharge
+
+END SUB

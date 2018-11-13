@@ -1,0 +1,36 @@
+/*
+--------------------------------------------------------------------
+* FILE			 : 	Lab_1.5.txt
+* Author		 :	Aniket Shrirang
+* Desc			 :	Program to 
+* Version		 :	1.0.0
+* Last Modified Date	 :	02-Nov-2018
+* Change Description	 :	Main
+---------------------------------------------------------------------
+*/
+
+Begin
+	DECLARE  num, binary, decimal, base, rem
+	INITIALIZE decimal= 0, base = 1
+	PROMPT " Enter the binary number (0's and 1's) to be coverted" AND STORE IN num
+	binary = num
+	calcDecimal(num, decimalDigit, base, rem)
+	PRINT " Converted decimal number of entered binary is: ", decimal;
+END
+
+/*********************************************************************
+* Module Name         : calcDecimal(num, decimalDigit, base, rem)
+* Input Parameters    : number
+* Return Type         : character
+* Author              : Aniket Shrirang
+* Creation Date       : 02-Nov-2018
+* Description         : Loop to find decimal number
+ *********************************************************************/
+
+SUB	calcDecimal(num, decimalDigit, base, rem)
+	WHILE (num!=0)
+	rem = num%10
+	decimal = decimal + rem * base
+	num = num/10
+	base = base * 2
+END SUB

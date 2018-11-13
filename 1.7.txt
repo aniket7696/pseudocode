@@ -1,0 +1,30 @@
+/*
+--------------------------------------------------------------------
+* FILE			 : 	Lab_1.7.txt
+* Author		 :	Aniket Shrirang
+* Desc			 :	Program to 
+* Version		 :	1.0.0
+* Last Modified Date	 :	02-Nov-2018
+* Change Description	 :	Main
+---------------------------------------------------------------------
+*/
+
+BEGIN
+	DECLARE totalPrice, price, tax
+	PROMPT " Enter the price of the product" AND STORE IN price
+	taxRate(tax)
+	PRINT " Total price of product is: ", totalPrice
+END
+
+/*********************************************************************
+* Module Name         : findMin(numbers[10])
+* Input Parameters    : number
+* Return Type         : number
+* Author              : Aniket Shrirang
+* Creation Date       : 02-Nov-2018
+* Description         : Finding total price
+ *********************************************************************/
+
+SUB	taxRate(tax)
+	totalPrice = price * 0.56
+END SUB

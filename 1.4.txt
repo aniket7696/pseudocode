@@ -1,0 +1,39 @@
+/*
+--------------------------------------------------------------------
+* FILE			 : 	Lab_1.4.txt
+* Author		 :	Aniket Shrirang
+* Desc			 :	Program to find Armstorng number
+* Version		 :	1.0.0
+* Last Modified Date	 :	02-Nov-2018
+* Change Description	 :	Main
+---------------------------------------------------------------------
+*/
+
+Begin
+	DECLARE num, tempNum, rem, result
+	INITIALIZE result = 0
+	PROPMT "Enter the number" AND STORE IN num
+	tempNum = num;
+	findArmstrong( num, rem, result)
+	IF result = num
+		PRINT " The number is Armstrong "
+	ELSE
+		PRINT " The number is not Armstrong "
+	END IF
+END
+
+/*********************************************************************
+* Module Name         : findArmstrong( num, rem, result)
+* Input Parameters    : number
+* Return Type         : character
+* Author              : Aniket Shrirang
+* Creation Date       : 02-Nov-2018
+* Description         : Loop for armstrong
+ *********************************************************************/
+
+SUB	findArmstrong( num, rem, result)
+	WHILE (num!= 0)
+	rem = num%10
+	result = result + (rem * rem * rem)
+	num = num/10
+END SUB

@@ -1,0 +1,71 @@
+/*
+--------------------------------------------------------------------
+* FILE			 : 	Lab_1.6.txt
+* Author		 :	Aniket Shrirang
+* Desc			 :	Program to 
+* Version		 :	1.0.0
+* Last Modified Date	 :	02-Nov-2018
+* Change Description	 :	Main
+---------------------------------------------------------------------
+*/
+
+BEGIN
+	DECLARE numbers[10] AS INTEGER ARRAY
+	INITIALIZE a AS INTEGER
+	PROMPT “Enter 10 numbers to be stored in array”
+	FOR index=1 TO 10
+		ACCEPT numbers[index]
+	END FOR
+	PROMPT " Enter 1 to find min number and 2 to find odd even number" AND STORE IN a
+	ACCEPT a;
+	IF (a==1)
+		findMin(numbers[10])
+	ELSE IF (a==2)
+		findEvenOdd(numbers[10])
+	ELSE
+		PRINT "Invalid Entry"
+END 
+
+
+/*********************************************************************
+* Module Name         : findMin(numbers[10])
+* Input Parameters    : number
+* Return Type         : number
+* Author              : Aniket Shrirang
+* Creation Date       : 02-Nov-2018
+* Description         : Finding minimum number
+ *********************************************************************/
+
+SUB	findMin(numbers[10])
+	DECLARE min AS INTEGER
+	INITIALIZE min TO 0
+	max=numbers[0]
+		FOR index=1 TO 10
+			IF numbers[index] < min THEN
+				min = numbers[index]
+			END IF
+		END FOR  
+	PRINT "The min number is: ", min
+END SUB
+
+/*********************************************************************
+* Module Name         : findEvenOdd(numbers[10])
+* Input Parameters    : number
+* Return Type         : number
+* Author              : Aniket Shrirang
+* Creation Date       : 02-Nov-2018
+* Description         : Finding even and odd number
+ *********************************************************************/
+
+SUB	findEvenOdd(numbers[10])
+		FOR index=1 TO 10
+			IF numbers[index]%2==0 THEN
+				PRINT " Even numbers are : ", numbers[index]
+			END IF
+		END FOR
+		FOR index=1 TO 10
+			IF numbers[index]%2!=0 THEN
+				PRINT " Odd numbers are : ", numbers[index]
+			END IF
+		END FOR
+END SUB
