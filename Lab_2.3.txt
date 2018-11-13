@@ -1,0 +1,38 @@
+/*********************************************************************
+ * File                 : Lab_2.3.txt
+ * Author Name          : Mohd Saleem Khan
+ * Desc                 : Program to count unique elements in an array.
+ * Version              : 1.0
+ * Date                 : 03-Nov-2018
+ *********************************************************************/
+
+BEGIN
+      DECLARE num[10]  AS INTEGER ARRAY
+      DECLARE count, index_0, index_1 AS INTEGER
+      INITIALIZE count TO 0
+    
+      PROMPT "ENTER ARRAY ELEMENTS" AND STORE IN num[10]
+   
+      CALL uniqueCount()
+END
+
+/*********************************************************************
+* Module Name         : uniqueCount()
+* Author              : Mohd Saleem Khan
+* Date                : 03-Nov-2018
+* Description         : Count Unique Elements in an Array.
+ *********************************************************************/
+
+SUB uniqueCount(num)
+          FOR index_0 0 TO 9
+               FOR index_1 0 TO index_0
+                   IF(num[index_0] == num[index_1])
+                         BREAK
+                   ELSE
+                          count++
+                   END IF
+                END FOR
+           END FOR
+
+                 PRINT count
+END SUB

@@ -1,0 +1,22 @@
+/*********************************************************************
+ * File                 : Lab_3.4.txt
+ * Author Name          : Mohd Saleem Khan
+ * Desc                 : Algorithm Analysis for program
+ * Version              : 1.0
+ * Date                 : 03-Nov-2018
+ *********************************************************************/
+
+
+ALGORITHM Sum(n)
+//Input: A nonnegative integer n
+sum=0
+for index=1 to n do
+sum=sum+i
+return sum
+
+
+1.What does the above algorithm compute?
+Ans. Sum of elements from 1 to n.
+
+2.What is the efficiency class of the given algorithm?
+Ans. O(n)

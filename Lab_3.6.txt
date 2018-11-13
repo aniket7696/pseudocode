@@ -1,0 +1,69 @@
+/*********************************************************************
+ * File                 : Lab_3.6.txt
+ * Author Name          : Mohd Saleem Khan
+ * Desc                 : Program to count unique elements in an array.
+ * Version              : 1.0
+ * Date                 : 03-Nov-2018
+ *********************************************************************/
+
+BEGIN
+      DECLARE num[5]  AS INTEGER ARRAY
+      DECLARE index, index1 AS INTEGER
+     
+      PROMPT "Enter elements in array" AND STORE IN num[5]
+   
+      CALL doSorting()
+      CALL doSearching()
+END 
+
+/*********************************************************************
+* Module Name         : doSorting()
+* Author              : Mohd Saleem Khan
+* Date                : 03-Nov-2018
+* Description         : To do sorting.
+ *********************************************************************/
+SUB doSorting(num)
+	FOR index = 0 TO n-1
+		FOR index1 = 0 TO n-1-index
+			IF num[index1] > num[index1+1] THEN
+				//swap(num[index1],num[index1+1])
+				temp = num[index1]
+				num[index1]=num[index1+1]
+				num[index1+1] = temp
+			END IF
+                 END FOR
+	END FOR
+END SUB
+
+/*********************************************************************
+* Module Name         : doSearching()
+* Author              : Mohd Saleem Khan
+* Date                : 03-Nov-2018
+* Description         : To do sorting.
+ *********************************************************************/
+SUB doSearching(num)
+   DECLARE searchNum, first, middle, last AS INTEGER
+   PROMPT "Enter the number you want to Search" AND STORE IN searchNum
+   INITIALIZE first TO 0
+   INITIALIZE last TO 4
+
+   middle = (first+last) / 2
+
+   WHILE(first<=last) 
+
+     IF(num[middle] < searchNum) THEN
+       first = middle + 1
+     ELSE IF(num[middle] == searchNum) THEN
+       PRINT "Element Found at " +(middle + 1)
+     ELSE
+        last = middle-1
+     END IF
+
+     middle= (first+last)/2
+
+    END WHILE
+    
+   IF(first>last)
+      PRINT "Element not found"
+   END IF
+END SUB

@@ -1,0 +1,76 @@
+/*********************************************************************
+ * File                 : Lab_2.4.txt
+ * Author Name          : Mohd Saleem Khan
+ * Desc                 : Program to calculate total leaves applicable per year for an employee
+ * Version              : 1.0
+ * Date                 : 03-Nov-2018
+ *********************************************************************/
+
+RECORD Employee
+       DECLARE empId as INTEGER
+       DECLARE employmentType AS STRING
+END RECORD
+
+
+BEGIN
+          DECLARE leaves, totalLeaves, index AS INTEGER
+          
+          FOR index 1 TO 5
+
+              PROMPT "Enter the EmployeeId" AND STORE IN Employee.empId
+              PROMPT "Enter the employmentType" AND STORE IN Employee.employmentType
+
+              CALL calculateLeaves(Employee)
+
+          END FOR
+END
+
+
+/*********************************************************************
+* Module Name         : calculateLeaves()
+* Author              : Mohd Saleem Khan
+* Date                : 03-Nov-2018
+* Description         : Calculate and Display total leaves.
+ *********************************************************************/
+
+
+
+SUB calculateLeaves(Employee)
+     IF(isValid(Employee))
+
+       IF(employmentType=='PERMANENT') THEN
+
+          leaves = 2;
+          totalLeaves = leaves*12;
+
+       ELSE (employmentType =='CONTRACT') THEN
+
+          leaves=1;
+          totalLeaves = leaves * 12;
+
+       END IF
+
+     END IF
+
+     PRINT "Employee Id :" , Employee.empId
+     PRINT "Total Available Leaves are :", totalLeaves
+
+END SUB    
+
+/*********************************************************************
+* Module Name         : isValid()
+* Author              : Mohd Saleem Khan
+* Date                : 03-Nov-2018
+* Description         : Check Data is Valid.
+ *********************************************************************/
+
+SUB isValid(Employee)
+    Check data ENTER BY USER
+         IF data is correctly entered by USER THEN
+              RETURN TRUE
+         ELSE THEN
+              PRINT "Invalid Data"
+         END IF
+END SUB
+
+END

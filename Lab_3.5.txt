@@ -1,0 +1,25 @@
+/*********************************************************************
+ * File                 : Lab_3.5.txt
+ * Module Name          : characterCount()
+ * Author Name          : Mohd Saleem Khan
+ * Desc                 : Program to count unique elements in an array.
+ * Version              : 1.0
+ * Date                 : 03-Nov-2018
+ *********************************************************************/
+
+SUB characterCount(word, char)
+     DECLARE count AS INT
+     DECLARE value AS INT
+     INITIALIZE value TO 0
+     
+     FOR count = 0 TO word.size()
+        IF(word[count] == char)
+
+           value++
+
+        END IF
+     END FOR
+  
+     PRINT "Character occurs" +value
+END SUB
+
